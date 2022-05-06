@@ -7,7 +7,7 @@ const {
 } = require(`./utils/constants`);
 
 const generateOffers = (count) => (
-  Array(count).fill({}).map(() => ({
+  Array.from({length: count}, () => ({
     title: TITLES[getRandomInt(0, TITLES.length - 1)],
     createdDate: getFormattedDateString(subtractMonths(new Date(), getRandomInt(0, 3))),
     announce: shuffle(SENTENCES).slice(getRandomInt(0, 4), 5).join(` `),
