@@ -6,7 +6,7 @@ const {
   CATEGORIES, TITLES, SENTENCES, DEFAULT_COUNT, FILE_NAME, ExitCode,
 } = require(`./utils/constants`);
 
-const generateOffers = (count) => (
+const generatePosts = (count) => (
   Array.from({length: count}, () => ({
     title: TITLES[getRandomInt(0, TITLES.length - 1)],
     createdDate: getFormattedDateString(subtractMonths(new Date(), getRandomInt(0, 3))),
@@ -26,7 +26,7 @@ module.exports = {
       throw new Error(`Не больше 1000 публикаций`);
     }
 
-    const content = JSON.stringify(generateOffers(countOffer));
+    const content = JSON.stringify(generatePosts(countOffer));
     fs.writeFile(FILE_NAME, content, err => {
       if (err) throw new Error(`Can't write file`)
       console.info(`File has been created!`)
