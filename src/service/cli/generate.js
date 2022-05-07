@@ -1,7 +1,7 @@
 'use strict'
 
 const chalk = require(`chalk`);
-const fs = require(`fs`);
+const fs = require(`fs`).promises;
 const {getRandomInt, shuffle, subtractMonths, getFormattedDateString} = require(`./utils/utils`);
 const {
   CATEGORIES, TITLES, SENTENCES, DEFAULT_COUNT, FILE_NAME, ExitCode,
@@ -19,7 +19,7 @@ const generatePosts = (count) => (
 
 module.exports = {
   name: `--generate`,
-  run(args) {
+  async run(args) {
     const [count] = args;
     const countOffer = Number.parseInt(count, 10) || DEFAULT_COUNT;
 
@@ -28,10 +28,13 @@ module.exports = {
     }
 
     const content = JSON.stringify(generatePosts(countOffer));
-    fs.writeFile(FILE_NAME, content, err => {
-      if (err) throw new Error(`Can't write file`)
+
+    try {
+      await fs.writeFile(FILE_NAME, content);
       console.info(chalk.green(`File has been created!`));
       process.exit(ExitCode.success);
-    });
+    } catch (error) {
+      throw new Error(`Can't write file`);
+    }
   }
 }
