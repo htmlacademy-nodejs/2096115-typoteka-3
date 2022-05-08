@@ -28,7 +28,7 @@ const HttpCode = {
   UNAUTHORIZED: 401,
 };
 
-const FILE_SENTENCES_PATH = `../data/sentences.txt`;
+const FILE_SENTENCES_PATH = `../../data/sentences.txt`;
 const FILE_TITLES_PATH = `../../data/titles.txt`;
 const FILE_CATEGORIES_PATH = `../../data/categories.txt`;
 
