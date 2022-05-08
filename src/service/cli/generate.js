@@ -17,6 +17,15 @@ const generatePosts = (count) => (
   }))
 );
 
+const readContent = async (path) => {
+  try {
+    const content = await fs.readFile(path, `utf-8`);
+    return content.trim().split(`\n`);
+  } catch (error) {
+    throw new Error(chalk.red(error.message));
+  }
+}
+
 module.exports = {
   name: `--generate`,
   async run(args) {
