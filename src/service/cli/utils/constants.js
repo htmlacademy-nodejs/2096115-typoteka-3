@@ -20,6 +20,14 @@ const ExitCode = {
   error: 1
 };
 
+const HttpCode = {
+  OK: 200,
+  NOT_FOUND: 404,
+  INTERNAL_SERVER_ERROR: 500,
+  FORBIDDEN: 403,
+  UNAUTHORIZED: 401,
+};
+
 const FILE_SENTENCES_PATH = `../data/sentences.txt`;
 const FILE_TITLES_PATH = `../../data/titles.txt`;
 const FILE_CATEGORIES_PATH = `../../data/categories.txt`;
@@ -34,5 +42,6 @@ module.exports = {
   FILE_TITLES_PATH,
   FILE_CATEGORIES_PATH,
   DEFAULT_PORT,
+  HttpCode,
   ExitCode,
 }
