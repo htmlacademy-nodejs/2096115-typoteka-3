@@ -13,6 +13,7 @@ const DEFAULT_COMMAND = `--help`;
 const USER_ARGV_INDEX = 2;
 const DEFAULT_COUNT = 1;
 const FILE_NAME = `mocks.json`;
+const DEFAULT_PORT = 3000;
 
 const ExitCode = {
   success: 0,
@@ -32,5 +33,6 @@ module.exports = {
   FILE_SENTENCES_PATH,
   FILE_TITLES_PATH,
   FILE_CATEGORIES_PATH,
+  DEFAULT_PORT,
   ExitCode,
 }
