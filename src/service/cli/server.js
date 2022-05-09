@@ -7,7 +7,7 @@ const {DEFAULT_PORT, FILE_NAME, HttpCode} = require("./utils/constants");
 
 const sendResponse = (res, statusCode, message) => {
   const template = `
-    <!Doctype html>
+    <!DOCTYPE html>
       <html lang="ru">
       <head>
         <title>NodeJS Course from HTML Academy</title>
