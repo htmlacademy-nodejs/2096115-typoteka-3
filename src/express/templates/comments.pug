@@ -1,0 +1,34 @@
+extends layout/layout
+
+mixin publication__list-item(name, img, date, time, linkText, paragraphText)
+  li.publication__list-item
+    .publication__header
+      img.publication__list-image(src=`${imgFolder}/${img}` width='20' height='20' alt='Аватар пользователя')
+      b.publication__list-name= name
+      time.publication__item-time(datetime=`${date}T${time}`)= `${date}, ${time}`
+    a.publication__item-text(href='#')= linkText
+    p.publication__text-strong= paragraphText
+    button.publication__button.button.button--close-item(type='button')
+      span.visually-hidden Закрыть строку списка
+
+block variables
+  - const wrapperClass = `wrapper wrapper--nobackground`;
+  - const headerClass = ``;
+  - const logoAnchorClass = `logo`;
+  - const logoImage = `logo-image-only.svg`;
+  - const needLogoName = true;
+  - const loggedIn = true;
+  - const avatarOnlyHeader = false;
+
+block content
+  main.main-page.main-page--padding
+    section.main-page__publication.publication
+      h1.publication__title Комментарии
+      ul.publication__list
+        +publication__list-item(`Александр Петров`, `avatar-small-2.png`, `2019-03-21`, `20:33`, `Главреды «Дождя», Forbes и других СМИ попросили Роскомнадзор разъяснить штрафы за ссылки на сайты.`, `«Яндекс.Метрика» запустила бесплатный сервис для оценки эффективности баннеров и видеорекламы в реальном времени`)
+        +publication__list-item(`Александр Петров`, `avatar-small-2.png`, `2019-03-21`, `20:33`, `Главреды «Дождя», Forbes и других СМИ попросили Роскомнадзор разъяснить штрафы за ссылки на сайты.`, `Игровая студия Playrix из Вологды потратила более $100 млн на покупку конкурентов в 2018 году`)
+        +publication__list-item(`Александр Петров`, `avatar-small-2.png`, `2019-03-21`, `20:33`, `Главреды «Дождя», Forbes и других СМИ попросили Роскомнадзор разъяснить штрафы за ссылки на сайты.`, `«Яндекс.Метрика» запустила бесплатный сервис для оценки эффективности баннеров и видеорекламы в реальном времени`)
+        +publication__list-item(`Александр Петров`, `avatar-small-2.png`, `2019-03-21`, `20:33`, `Главреды «Дождя», Forbes и других СМИ попросили Роскомнадзор разъяснить штрафы за ссылки на сайты.`, `Игровая студия Playrix из Вологды потратила более $100 млн на покупку конкурентов в 2018 году`)
+        +publication__list-item(`Александр Петров`, `avatar-small-2.png`, `2019-03-21`, `20:33`, `Главреды «Дождя», Forbes и других СМИ попросили Роскомнадзор разъяснить штрафы за ссылки на сайты.`, `Игровая студия Playrix из Вологды потратила более $100 млн на покупку конкурентов в 2018 году`)
+        +publication__list-item(`Александр Петров`, `avatar-small-2.png`, `2019-03-21`, `20:33`, `Главреды «Дождя», Forbes и других СМИ попросили Роскомнадзор разъяснить штрафы за ссылки на сайты.`, `«Яндекс.Метрика» запустила бесплатный сервис для оценки эффективности баннеров и видеорекламы в реальном времени`)
+        +publication__list-item(`Александр Петров`, `avatar-small-2.png`, `2019-03-21`, `20:33`, `Главреды «Дождя», Forbes и других СМИ попросили Роскомнадзор разъяснить штрафы за ссылки на сайты.`, `«Яндекс.Метрика» запустила бесплатный сервис для оценки эффективности баннеров и видеорекламы в реальном времени`)

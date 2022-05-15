@@ -1,0 +1,27 @@
+- const imgFolder = `../img`;
+- const fontsFolder = `../fonts`;
+- const cssFolder = `../css`;
+- const jsFolder = `../js`;
+
+block variables
+
+doctype html
+html(lang='ru')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width,initial-scale=1')
+    meta(name='description' content='Личный блог Типотека')
+    meta(http-equiv='X-UA-Compatible' content='ie=edge')
+    title Типотека
+    link(rel='preload' href=`${fontsFolder}/Inter-Regular.woff2` as='font' crossorigin='anonymous')
+    link(rel='preload' href=`${fontsFolder}/Inter-Medium.woff2` as='font' crossorigin='anonymous')
+    link(rel='preload' href=`${fontsFolder}/SFProDisplay-Regular.woff2` as='font' crossorigin='anonymous')
+    link(rel='stylesheet' href=`${cssFolder}/style.min.css`)
+  body
+    div(class=wrapperClass)
+      include ../partials/header
+      block content
+      include ../partials/footer
+    script(src=`${jsFolder}/vendor.js`)
+    script(src=`${jsFolder}/main.js`)
+
