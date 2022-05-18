@@ -12,10 +12,10 @@ postsRouter.get(`/`, async (req, res) => {
   try {
     const fileContent = await fs.readFile(path.resolve(process.cwd(), FILE_NAME));
     const mocks = JSON.parse(fileContent);
-    res.json(mocks);
+    res.status(200).json(mocks);
   } catch (err) {
     console.error(chalk.red(err.message));
-    res.send([]);
+    res.status(404).send([]);
   }
 })
 
