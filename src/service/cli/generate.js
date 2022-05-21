@@ -1,6 +1,7 @@
 'use strict'
 
 const chalk = require(`chalk`);
+const path = require(`path`);
 const fs = require(`fs`).promises;
 const {getRandomInt, shuffle, subtractMonths, getFormattedDateString} = require(`./utils/utils`);
 const {
@@ -48,7 +49,7 @@ module.exports = {
     const content = JSON.stringify(generatePosts(countOffer, titles, categories, sentences));
 
     try {
-      await fs.writeFile(FILE_NAME, content);
+      await fs.writeFile(path.resolve(process.cwd(), FILE_NAME), content);
       console.info(chalk.green(`File has been created!`));
       process.exit(ExitCode.success);
     } catch (error) {
